@@ -8,7 +8,8 @@
 */
 
 import router from '@adonisjs/core/services/router'
+const StoreItemController = () => import('#controllers/StoreItemController')
 
 router.on('/').render('pages/home')
 
-router.get('/store-items', 'StoreItemController.getStoreItems')
+router.get('/products', [StoreItemController,'getStoreItems'])
